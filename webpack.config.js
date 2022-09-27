@@ -5,12 +5,13 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    filename: '[name].js',
   },
   devServer: {
     static: './dist',
+    hot: false, // optional, but you must not set both hot and liveReload to true
+    liveReload: true, // allow  browser automatic refresh on file changes
   },
 
   module: {
